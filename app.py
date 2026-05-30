@@ -18,7 +18,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "styleiq-secret-2024-change-in-production")
-
+app.static_folder = 'static'
 # ── MongoDB ────────────────────────────────────────────────────────────────
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/styleiq")
 try:
