@@ -16,9 +16,9 @@ from bson import ObjectId
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.secret_key = os.getenv("SECRET_KEY", "styleiq-secret-2024-change-in-production")
-app.static_folder = 'static'
+
 # ── MongoDB ────────────────────────────────────────────────────────────────
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/styleiq")
 try:
@@ -530,6 +530,20 @@ def change_password():
 # ══════════════════════════════════════════════════════════════════════════
 #  ERROR HANDLERS
 # ══════════════════════════════════════════════════════════════════════════
+
+
+@app.route("/static/<path:filename>")
+def serve_static(filename):
+    """Serve static files - needed for Vercel deployment."""
+    from flask import send_from_directory
+    import mimetypes
+    static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+    mime_type, _ = mimetypes.guess_type(filename)
+    response = send_from_directory(static_dir, filename)
+    if mime_type:
+        response.headers['Content-Type'] = mime_type
+    response.headers['Cache-Control'] = 'public, max-age=31536000'
+    return response
 
 @app.errorhandler(404)
 def not_found(e):
