@@ -3,7 +3,6 @@
 
 > A professional AI fashion platform built with Flask, MongoDB, Machine Learning, and OpenAI.
 
-![FitAI Banner](https://via.placeholder.com/1200x400/040810/00d4ff?text=FitAI+%E2%80%94+AI+Fashion+Intelligence)
 
 ---
 
