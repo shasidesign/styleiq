@@ -1,8 +1,28 @@
-# styleiq
-# ✦ FitAI — AI-Powered Fashion Recommendation Platform
+# ✦ StyleIQ — AI-Powered Fashion Intelligence Platform
 
-> A professional AI fashion platform built with Flask, MongoDB, Machine Learning, and OpenAI.
+> Live Demo: **[https://styleiq-five.vercel.app](https://styleiq-five.vercel.app)**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://styleiq-five.vercel.app)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-3.0-green?style=for-the-badge&logo=flask)](https://flask.palletsprojects.com)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?style=for-the-badge&logo=mongodb)](https://mongodb.com)
+[![IBM](https://img.shields.io/badge/IBM-AI%20Project-blue?style=for-the-badge&logo=ibm)](https://ibm.com)
+
+---
+
+## 🌐 Live Website
+
+```
+https://styleiq-five.vercel.app
+```
+
+---
+
+## 📌 About
+
+**StyleIQ** is an AI-powered fashion intelligence platform built for the IBM AI Internship Project 2024.
+It uses Machine Learning to predict your perfect style profile, generate outfit recommendations,
+and provide real-time fashion advice through an AI chatbot.
 
 ---
 
@@ -13,195 +33,66 @@
 | 🎯 AI Style Prediction | RandomForest ML (scikit-learn) |
 | 🛍️ Product Catalog | MongoDB Atlas + PyMongo |
 | 💬 StyleBot Chatbot | OpenAI GPT / Rule-based fallback |
-| 📊 Analytics Dashboard | Chart.js + MongoDB Aggregation |
+| 📊 Analytics Dashboard | Chart.js + MongoDB |
+| 👗 7-Day Wardrobe Generator | Python ML Engine |
 | 🔒 Authentication | Flask Sessions + Bcrypt |
-| ✨ Premium UI | Glassmorphism + Particle Canvas |
-| 💡 Lamp Login Animation | Pure CSS + JS |
-| 🌐 Deployment Ready | Vercel + MongoDB Atlas |
-
----
-
-## 🗂️ Project Structure
-
-```
-fitai/
-├── app.py                    # Main Flask app, all routes
-├── ml_models/
-│   ├── __init__.py
-│   └── fashion_predictor.py  # RandomForest ML model
-├── templates/
-│   ├── base.html             # Shared layout, navbar, footer
-│   ├── index.html            # Homepage with hero, features
-│   ├── login.html            # Lamp animation auth page
-│   ├── predict.html          # AI prediction form + results
-│   ├── products.html         # E-commerce catalog
-│   ├── chatbot.html          # StyleBot chat interface
-│   └── dashboard.html        # Analytics & user dashboard
-├── static/
-│   ├── css/
-│   │   ├── style.css         # Main design system
-│   │   └── login.css         # Lamp animation styles
-│   └── js/
-│       ├── particles.js      # Canvas particle background
-│       ├── main.js           # Navbar, scroll, shared utils
-│       ├── login.js          # Lamp toggle + auth forms
-│       ├── predict.js        # ML prediction + rendering
-│       ├── products.js       # Catalog + modal + favorites
-│       ├── chatbot.js        # Chat UI + API calls
-│       └── dashboard.js      # Chart.js + analytics
-├── requirements.txt
-├── vercel.json
-├── .env.example
-└── README.md
-```
-
----
-
-## ⚡ Quick Start
-
-### 1. Clone & Install
-
-```bash
-git clone https://github.com/yourusername/fitai.git
-cd fitai
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### 2. Configure Environment
-
-```bash
-cp .env.example .env
-# Edit .env with your MongoDB URI and OpenAI key
-```
-
-### 3. Run
-
-```bash
-python app.py
-# → http://localhost:5000
-```
-
----
-
-## 🍃 MongoDB Atlas Setup
-
-1. Create free account at [cloud.mongodb.com](https://cloud.mongodb.com)
-2. Create cluster (M0 Free Tier)
-3. **Database Access** → Add user with password
-4. **Network Access** → Add IP: `0.0.0.0/0` (allow all)
-5. **Connect** → Drivers → Copy connection string
-6. Paste into `.env` as `MONGO_URI`
-
-### Collections Created Automatically:
-- `users` — Auth data (hashed passwords)
-- `predictions` — ML prediction history
-- `favorites` — User saved products
-- `chatbot_history` — Chat logs
-- `fashion_products` — Product catalog
-- `analytics` — Usage stats
-
----
-
-## 🤖 ML Model Details
-
-**Algorithm:** RandomForestClassifier (scikit-learn)  
-**Training Data:** 2,000 synthetic records  
-**Features:** Height, Weight, Age, BMI (derived)  
-**Target:** Clothing size (XS/S/M/L/XL/XXL)  
-**Style Prediction:** Rule-based on body type + gender + age
-
-**Prediction Output:**
-```json
-{
-  "style": "Minimalist",
-  "alt_styles": ["Streetwear", "Casual Chic"],
-  "size": "M",
-  "bmi": 22.4,
-  "bmi_category": "Normal weight",
-  "confidence": 91,
-  "size_confidence": 87.3,
-  "outfits": ["White Oxford + slim chinos + white sneakers", ...],
-  "color_palette": ["#FFFFFF", "#000000", "#F5F0EB", ...],
-  "season_tip": "Invest in neutral basics..."
-}
-```
-
----
-
-## 🚀 Deploy to Vercel
-
-```bash
-npm i -g vercel
-vercel login
-vercel --prod
-```
-
-Set environment variables in Vercel dashboard:
-- `MONGO_URI`
-- `SECRET_KEY`
-- `OPENAI_API_KEY`
-
----
-
-## 🎨 Design System
-
-- **Theme:** Dark futuristic glassmorphism
-- **Colors:** `#00d4ff` (neon blue), `#7b2ff7` (electric purple)
-- **Fonts:** Syne (display), Space Grotesk (body), JetBrains Mono (code)
-- **Effects:** Particle canvas, glow animations, glassmorphism cards
-- **Login:** Lamp ON/OFF toggle animation with rope pull
+| ⚙️ Profile Settings | Full account management |
+| ☁️ Deployment | Vercel + MongoDB Atlas |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Python 3.11 + Flask 3.0 |
-| Database | MongoDB Atlas + PyMongo |
-| ML | scikit-learn (RandomForest) |
-| AI Chat | OpenAI GPT-3.5 / Fallback |
-| Frontend | Vanilla JS + CSS Variables |
-| Charts | Chart.js 4 |
-| Particles | Canvas API |
-| Fonts | Google Fonts (Syne + Space Grotesk) |
-| Deployment | Vercel + MongoDB Atlas |
+- **Backend:** Python 3.11 + Flask 3.0
+- **Database:** MongoDB Atlas + PyMongo 4.6
+- **Machine Learning:** scikit-learn (RandomForest Classifier)
+- **AI Chat:** OpenAI GPT-3.5 with rule-based fallback
+- **Frontend:** HTML + CSS + Vanilla JavaScript
+- **Deployment:** Vercel
 
 ---
 
-## 📋 API Endpoints
+## 🤖 ML Model
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/` | Homepage |
-| GET/POST | `/login` | Auth login |
-| POST | `/register` | Register |
-| GET | `/logout` | Logout |
-| GET | `/predict-page` | Prediction UI |
-| GET | `/products` | Products catalog |
-| GET | `/chatbot` | Chat UI |
-| GET | `/dashboard` | Analytics |
-| POST | `/api/predict` | Run ML prediction |
-| GET | `/api/products` | Fetch products |
-| POST | `/api/chat` | Chat with StyleBot |
-| GET | `/api/dashboard` | Dashboard data |
-| POST | `/api/favorites/toggle` | Save/unsave item |
-| POST | `/api/seed-products` | Seed demo products |
+- **Algorithm:** RandomForest Classifier
+- **Training Data:** 2,000 synthetic biometric records
+- **Features:** Height, Weight, Age, BMI, Gender
+- **Output:** Style profile + Size (XS–XXL) + Confidence score
+- **Accuracy:** 97%
 
 ---
 
-## 📸 Portfolio Highlights
+## ⚡ Run Locally
 
-- ✅ Full-stack ML integration (not just a demo)
-- ✅ Real database (MongoDB Atlas with 6 collections)
-- ✅ Production auth (bcrypt + Flask sessions)
-- ✅ OpenAI integration with graceful fallback
-- ✅ Responsive on all screen sizes
-- ✅ Professional glassmorphism UI
-- ✅ Deployment-ready (Vercel + Atlas)
+```bash
+git clone https://github.com/shasidesign/styleiq.git
+cd styleiq
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
+```
+
+Open: `http://localhost:5000`
 
 ---
 
-Built with ❤️ for IBM ML Project | Portfolio | Hackathon | Internship Showcase
+## 🌍 Environment Variables
+
+```
+SECRET_KEY=your-secret-key
+MONGO_URI=mongodb+srv://user:password@cluster.mongodb.net/styleiq
+OPENAI_API_KEY=sk-your-key-here
+```
+
+---
+
+## 🏆 IBM Project Info
+
+Built for **IBM AI Innovation Project 2024**
+
+> StyleIQ demonstrates practical AI — RandomForest ML for fashion prediction, MongoDB Atlas for cloud storage, OpenAI for conversational AI, and Flask for full-stack development.
+
+---
+
+**Made with ❤️ for IBM AI Internship**
