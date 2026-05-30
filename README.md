@@ -1,3 +1,4 @@
+# styleiq
 # ✦ FitAI — AI-Powered Fashion Recommendation Platform
 
 > A professional AI fashion platform built with Flask, MongoDB, Machine Learning, and OpenAI.
